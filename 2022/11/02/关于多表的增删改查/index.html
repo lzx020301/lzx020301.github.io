@@ -24,7 +24,7 @@
 <meta property="og:description" content="关于多表的增删改查记录 今天在做 瑞吉外卖 项目的时候，涉及到了关于多表一起查询修改的操作，记录一下整个过程  当前情况描述 当前有两张表，分别是dish表和dish_flavors表  dish表如下    名 类型 注释    id bigint 主键   name varchar 菜品名称   category_id bigint 菜品分类id   price decimal 菜品价格">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-02T08:07:22.224Z">
-<meta property="article:modified_time" content="2022-11-02T08:07:22.224Z">
+<meta property="article:modified_time" content="2022-11-02T08:11:16.019Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -356,32 +356,14 @@
 <blockquote>
 <p>此时前端传给后端的数据为</p>
 <p>{name: “青椒肉丝”, price: 2000, code: “”, image: “789266bf-3678-41ca-98ce-d9e2a71d77f6.png”,…}</p>
-<ol>
-<li><p>categoryId: “1413384954989060097”</p>
-</li>
-<li><p>code: “”</p>
-</li>
-<li><p>description: “123123”</p>
-</li>
-<li><p>flavors: [{name: “甜味”, value: “[“无糖”,”少糖”,”半糖”,”多糖”,”全糖”]”, showOption: false}]</p>
-</li>
-<li><ol>
-<li><ol>
-<li><p>0: {name: “甜味”, value: “[“无糖”,”少糖”,”半糖”,”多糖”,”全糖”]”, showOption: false}</p>
-</li>
-<li><p>image: “789266bf-3678-41ca-98ce-d9e2a71d77f6.png”</p>
-</li>
-<li><p>name: “青椒肉丝”</p>
-</li>
-<li><p>price: 2000</p>
-</li>
-<li><p>status: 1</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+<p>categoryId: “1413384954989060097”</p>
+<p>code: “”</p>
+<p>description: “123123”</p>
+<p>flavors: [{name: “甜味”, value: “[“无糖”,”少糖”,”半糖”,”多糖”,”全糖”]”, showOption: false}]</p>
+<p>  0: {name: “甜味”, value: “[“无糖”,”少糖”,”半糖”,”多糖”,”全糖”]”, showOption: false}<br>image: “789266bf-3678-41ca-98ce-d9e2a71d77f6.png”</p>
+<p>name: “青椒肉丝”</p>
+<p>price: 2000</p>
+<p>status: 1</p>
 </blockquote>
 <blockquote>
 <p>可以看到上面的数据不仅包含dish表的一些相关数据，其中还包含了一项flavors，很明显这就涉及到了dish_flavors表的相关数据。</p>
